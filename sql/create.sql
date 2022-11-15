@@ -47,21 +47,21 @@ create table new_typhoon_name(
 
 
 /*Min Ji*/
-CREATE TABLE IF NOT EXISTS HUMIDTABLE(
+CREATE TABLE HUMIDTABLE(
 	humiddate date NOT NULL, 
 	region_code CHAR(4), 
 	relative_humidity FLOAT(4), 
 	primary key(humiddate, region_code), 
 	foreign key(region_code) references region(region_code));
 
-CREATE TABLE IF NOT EXISTS PRECIPITAIONTABLE (
+CREATE TABLE PRECIPITAIONTABLE (
 	raindate date NOT NULL,
 	region_code CHAR(4), 
 	precipitation FLOAT(4), 
 	primary key(raindate, region_code),
 	foreign key(region_code) references region(region_code));
 
-CREATE TABLE IF NOT EXISTS UVTABLE (
+CREATE TABLE UVTABLE (
 	uvdate date NOT NULL,
 	region_code CHAR(4), 
 	insolation FLOAT(4), 
