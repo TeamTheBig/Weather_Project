@@ -55,3 +55,34 @@ CREATE TABLE OZONE (
 	PRIMARY KEY(DATE, REGION_CODE)
 );
 
+
+/*Yeonsoo*/
+
+ CREATE TABLE sensory_temperature(
+    date date NOT NULL,
+    region_code varchar(4) NOT NULL,
+    sensory_tem DECIMAL(3,1),
+    wind DECIMAL(4,1),
+    PRIMARY KEY(date, region_code),
+    FOREIGN KEY(region_code) REFERENCES region(region_code)
+);                              
+
+ CREATE TABLE tem_comment(
+    comment_id varchar(5) NOT NULL,
+    passwd int NOT NULL,
+    date date,
+    region_code varchar(4),
+    user_sensory_tem varchar(10),
+    user_clothes varchar(10),
+    PRIMARY KEY(comment_id),
+    FOREIGN KEY(region_code) REFERENCES region(region_code)
+);       
+
+ CREATE TABLE visibility(
+    date datetime NOT NULL,
+    region_code varchar(4),
+    visi_dist int,
+    PRIMARY KEY(date, region_code),
+    FOREIGN KEY(region_code) REFERENCES region(region_code)
+);     
+
