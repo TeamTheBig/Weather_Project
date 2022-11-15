@@ -43,13 +43,26 @@
             ,RANK() OVER(ORDER BY AVG_FINE_DUST) AS RANKING
             FROM AVG_FINE_DUST";
             $result1 = mysqli_query($conn, $query1);
+
             $query2 = "SELECT CITY, AVG_ULTRAFINE_DUST
             ,RANK() OVER(ORDER BY AVG_ULTRAFINE_DUST) AS RANKING
             FROM AVG_FINE_DUST";
             $result2 = mysqli_query($conn, $query2);
+
+            $query3 = "SELECT DATES, CITY, AVG_FINE_DUST
+            FROM AVG_FINE_DUST_BY_DATES
+            ORDER BY CITY, DATES";
+            $result3 = mysqli_query($conn, $query3);
+
+            $query4 = "SELECT DATES, CITY, AVG_ULTRAFINE_DUST
+            FROM AVG_FINE_DUST_BY_DATES
+            ORDER BY CITY, DATES";
+            $result4 = mysqli_query($conn, $query4);
             ?>
 
+
             <FORM>
+                <p>Fine dust Ranking of October</p>
                 <TABLE Border=1>
                     <tr>
                         <td>Ranking</td>
@@ -71,6 +84,7 @@
                     <?php } ?>
                 </TABLE>
 
+                <p>Ultra fine dust Ranking of October</p>
                 <TABLE Border=1>
                     <tr>
                         <td>Ranking</td>
@@ -91,11 +105,57 @@
                     </tr>
                     <?php } ?>
                 </TABLE>
+
+                <p>Fine dust concentration trend of October (Blank means 'All')</p>
+                <TABLE Border=1>
+                    <tr>
+                        <td>City</td>
+                        <td>Dates</td>
+                        <td>Average fine dust</td>
+                    </tr>
+                    <?php while ($row = mysqli_fetch_array($result3)) { ?>
+                    <tr>
+                        <td>
+                            <?= $row['CITY'] ?>
+                        </td>
+                        <td>
+                            <?= $row['DATES'] ?>
+                        </td>
+                        <td>
+                            <?= $row['AVG_FINE_DUST'] ?>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </TABLE>
+
+                <p>Ultra fine dust concentration trend of October (Blank means 'All')</p>
+                <TABLE Border=1>
+                    <tr>
+                        <td>City</td>
+                        <td>Dates</td>
+                        <td>Average ultrafine dust</td>
+                    </tr>
+                    <?php while ($row = mysqli_fetch_array($result4)) { ?>
+                    <tr>
+                        <td>
+                            <?= $row['CITY'] ?>
+                        </td>
+                        <td>
+                            <?= $row['DATES'] ?>
+                        </td>
+                        <td>
+                            <?= $row['AVG_ULTRAFINE_DUST'] ?>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </TABLE>
             </FORM>
 
             <?php
             mysqli_free_result($result1);
             mysqli_free_result($result2);
+            mysqli_free_result($result3);
+            mysqli_free_result($result4);
             mysqli_close($conn);
             ?>
         </div>
