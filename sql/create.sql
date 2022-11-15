@@ -1,3 +1,57 @@
+/*Hyuna*/
+CREATE TABLE REGION (
+	REGION_CODE CHAR(4) NOT NULL, 
+	ADMINISTRATIVE_AREA VARCHAR(20) NOT NULL,
+	CITY VARCHAR(20) NOT NULL,
+	PRIMARY KEY(REGION_CODE)
+);
+
+CREATE TABLE FINE_DUST (
+	DATES DATE NOT NULL,
+	REGION_CODE CHAR(4) NOT NULL, 
+	FINE_DUST INT NOT NULL,
+	ULTRAFINE_DUST INT NOT NULL,
+	PRIMARY KEY(DATES, REGION_CODE),
+	FOREIGN KEY(region_code) REFERENCES region(region_code)
+);
+
+CREATE TABLE OZONE (
+	DATES DATE NOT NULL,
+	REGION_CODE CHAR(4) NOT NULL, 
+	OZONE NUMERIC(4,3) NOT NULL,
+	PRIMARY KEY(DATES, REGION_CODE),
+	FOREIGN KEY(region_code) REFERENCES region(region_code)
+);
+
+CREATE VIEW AVG_OZONE AS(
+SELECT REGION.CITY AS CITY, AVG(OZONE.OZONE) AS AVG_OZONE
+FROM OZONE, REGION
+WHERE REGION.REGION_CODE = OZONE.REGION_CODE
+GROUP BY REGION.CITY);
+
+CREATE VIEW AVG_FINE_DUST AS(
+SELECT REGION.CITY AS CITY, AVG(FINE_DUST.FINE_DUST) AS AVG_FINE_DUST, AVG(FINE_DUST.ULTRAFINE_DUST) AS AVG_ULTRAFINE_DUST
+FROM FINE_DUST, REGION
+WHERE REGION.REGION_CODE = FINE_DUST.REGION_CODE
+GROUP BY REGION.CITY);
+
+CREATE VIEW AVG_FINE_DUST_BY_DATES AS(
+SELECT FINE_DUST.DATES AS DATES, REGION.CITY AS CITY, AVG(FINE_DUST.FINE_DUST) AS AVG_FINE_DUST, AVG(FINE_DUST.ULTRAFINE_DUST) AS AVG_ULTRAFINE_DUST
+FROM FINE_DUST, REGION
+WHERE REGION.REGION_CODE = FINE_DUST.REGION_CODE
+GROUP BY DATES, REGION.CITY
+WITH ROLLUP);
+/*GROUP BY ROLLUP(DATES, REGION.CITY));*/
+
+CREATE VIEW AVG_OZONE_BY_DATES AS(
+SELECT OZONE.DATES AS DATES, REGION.CITY AS CITY, AVG(OZONE.OZONE) AS AVG_OZONE
+FROM OZONE, REGION
+WHERE REGION.REGION_CODE = OZONE.REGION_CODE
+GROUP BY DATES, REGION.CITY
+WITH ROLLUP);
+/*GROUP BY ROLLUP(DATES, REGION.CITY));*/
+
+
 /*YEONHUI*/
 create table temperature(
     mdate date,
@@ -6,7 +60,7 @@ create table temperature(
     min_temperature numeric(3,1),
     max_temperature numeric(3,1),
     primary key (mdate, region_code), 
-    foreign key (region_code) references region);
+    foreign key (region_code) references region(region_code));
 
 create table typhoon(
     typhoon_name varchar(20),
@@ -22,66 +76,54 @@ create table new_typhoon_name(
 
 
 /*Min Ji*/
-CREATE TABLE IF NOT EXISTS HUMIDTABLE (humiddate date NOT NULL, 
-    region_code VARCHAR(4), relative_humidity FLOAT(4), primary key(humiddate, region_code), foreign key(region_code));
+CREATE TABLE HUMIDTABLE(
+	humiddate date NOT NULL, 
+	region_code CHAR(4), 
+	relative_humidity FLOAT(4), 
+	primary key(humiddate, region_code), 
+	foreign key(region_code) references region(region_code));
 
-CREATE TABLE IF NOT EXISTS PRECIPITAIONTABLE (raindate date NOT NULL, 
-    region_code Foreign Key VARCHAR(4), precipitation FLOAT(4), primary key(raindate, region_code), foreign key(region_code));
+CREATE TABLE PRECIPITAIONTABLE (
+	raindate date NOT NULL,
+	region_code CHAR(4), 
+	precipitation FLOAT(4), 
+	primary key(raindate, region_code),
+	foreign key(region_code) references region(region_code));
 
-CREATE TABLE IF NOT EXISTS UVTABLE (uvdate date NOT NULL, 
-    region_code Foreign Key VARCHAR(4), insolation FLOAT(4), primary key(uvdate, region_code), foreign key(region_code));
+CREATE TABLE UVTABLE (
+	uvdate date NOT NULL,
+	region_code CHAR(4), 
+	insolation FLOAT(4), 
+	primary key(uvdate, region_code), 
+	foreign key(region_code) references region(region_code));
 
-
-/*Hyuna*/
-CREATE TABLE REGION (
-	REGION_CODE CHAR(4) NOT NULL, 
-	ADMINISTRATIVE_AREA VARCHAR(20) NOT NULL,
-	CITY VARCHAR(20) NOT NULL,
-	PRIMARY KEY(REGION_CODE)
-);
-
-CREATE TABLE FINE_DUST (
-	DATES DATE NOT NULL,
-	REGION_CODE CHAR(4) NOT NULL, 
-	FINE_DUST INT NOT NULL,
-	ULTRAFINE_DUST INT NOT NULL,
-	PRIMARY KEY(DATES, REGION_CODE)
-);
-
-CREATE TABLE OZONE (
-	DATES DATE NOT NULL,
-	REGION_CODE CHAR(4) NOT NULL, 
-	OZONE FLOAT NOT NULL,
-	PRIMARY KEY(DATES, REGION_CODE)
-);
 
 
 /*Yeonsoo*/
-
  CREATE TABLE sensory_temperature(
-    date date NOT NULL,
-    region_code varchar(4) NOT NULL,
+    sdate date NOT NULL,
+    region_code char(4) NOT NULL,
     sensory_tem DECIMAL(3,1),
     wind DECIMAL(4,1),
-    PRIMARY KEY(date, region_code),
+    PRIMARY KEY(sdate, region_code),
     FOREIGN KEY(region_code) REFERENCES region(region_code)
 );                              
 
  CREATE TABLE tem_comment(
-    comment_id varchar(20) NOT NULL,
-    passwd int NOT NULL,
-    region_code varchar(4),
+    nickname varchar(20) NOT NULL,
+    passwd varchar(20) NOT NULL,
+    region_code char(4) NOT NULL,
     user_sensory_tem varchar(10),
     user_clothes varchar(10),
-    PRIMARY KEY(comment_id),
+    PRIMARY KEY(nickname),
     FOREIGN KEY(region_code) REFERENCES region(region_code)
-);                              
+);       
+         
 
  CREATE TABLE visibility(
-    date datetime NOT NULL,
-    region_code varchar(4),
+    vdate datetime NOT NULL,
+    region_code char(4) NOT NULL,
     visi_dist int,
-    PRIMARY KEY(date, region_code),
+    PRIMARY KEY(vdate, region_code),
     FOREIGN KEY(region_code) REFERENCES region(region_code)
 );     
-
