@@ -31,7 +31,7 @@ create table temperature(
     min_temperature numeric(3,1),
     max_temperature numeric(3,1),
     primary key (mdate, region_code), 
-    foreign key (region_code) references region);
+    foreign key (region_code) references region(region_code));
 
 create table typhoon(
     typhoon_name varchar(20),
@@ -47,18 +47,30 @@ create table new_typhoon_name(
 
 
 /*Min Ji*/
-CREATE TABLE IF NOT EXISTS HUMIDTABLE (humiddate date NOT NULL, 
-    region_code CHAR(4), relative_humidity FLOAT(4), primary key(humiddate, region_code), foreign key(region_code));
+CREATE TABLE IF NOT EXISTS HUMIDTABLE(
+	humiddate date NOT NULL, 
+	region_code CHAR(4), 
+	relative_humidity FLOAT(4), 
+	primary key(humiddate, region_code), 
+	foreign key(region_code) references region(region_code));
 
-CREATE TABLE IF NOT EXISTS PRECIPITAIONTABLE (raindate date NOT NULL, 
-    region_code Foreign Key CHAR(4), precipitation FLOAT(4), primary key(raindate, region_code), foreign key(region_code));
+CREATE TABLE IF NOT EXISTS PRECIPITAIONTABLE (
+	raindate date NOT NULL,
+	region_code CHAR(4), 
+	precipitation FLOAT(4), 
+	primary key(raindate, region_code),
+	foreign key(region_code) references region(region_code));
 
-CREATE TABLE IF NOT EXISTS UVTABLE (uvdate date NOT NULL, 
-    region_code Foreign Key CHAR(4), insolation FLOAT(4), primary key(uvdate, region_code), foreign key(region_code));
+CREATE TABLE IF NOT EXISTS UVTABLE (
+	uvdate date NOT NULL,
+	region_code CHAR(4), 
+	insolation FLOAT(4), 
+	primary key(uvdate, region_code), 
+	foreign key(region_code) references region(region_code));
+
 
 
 /*Yeonsoo*/
-
  CREATE TABLE sensory_temperature(
     sdate date NOT NULL,
     region_code char(4) NOT NULL,
