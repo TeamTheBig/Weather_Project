@@ -1,3 +1,8 @@
+/*Yeonhui*/
+drop table typhoon;
+drop table new_typhoon_name;
+drop table temperature;
+
 /*Min Ji*/
 drop table HUMIDTABLE;
 drop table UVTABLE;
