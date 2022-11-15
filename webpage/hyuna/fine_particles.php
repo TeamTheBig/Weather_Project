@@ -63,12 +63,14 @@
 
             <FORM>
                 <p>Fine dust Ranking of October</p>
-                <TABLE Border=1>
-                    <tr>
-                        <td>Ranking</td>
-                        <td>City</td>
-                        <td>Average fine dust</td>
-                    </tr>
+                <TABLE>
+                    <thead>
+                        <tr>
+                            <td>Ranking</td>
+                            <td>City</td>
+                            <td>Average fine dust</td>
+                        </tr>
+                    </thead>
                     <?php while ($row = mysqli_fetch_array($result1)) { ?>
                     <tr>
                         <td>
@@ -85,12 +87,14 @@
                 </TABLE>
 
                 <p>Ultra fine dust Ranking of October</p>
-                <TABLE Border=1>
-                    <tr>
-                        <td>Ranking</td>
-                        <td>City</td>
-                        <td>Average ultra fine dust</td>
-                    </tr>
+                <TABLE>
+                    <thead>
+                        <tr>
+                            <td>Ranking</td>
+                            <td>City</td>
+                            <td>Average ultra fine dust</td>
+                        </tr>
+                    </thead>
                     <?php while ($row = mysqli_fetch_array($result2)) { ?>
                     <tr>
                         <td>
@@ -107,12 +111,14 @@
                 </TABLE>
 
                 <p>Fine dust concentration trend of October (Blank means 'All')</p>
-                <TABLE Border=1>
-                    <tr>
-                        <td>City</td>
-                        <td>Dates</td>
-                        <td>Average fine dust</td>
-                    </tr>
+                <TABLE>
+                    <thead>
+                        <tr>
+                            <td>City</td>
+                            <td>Dates</td>
+                            <td>Average fine dust</td>
+                        </tr>
+                    </thead>
                     <?php while ($row = mysqli_fetch_array($result3)) { ?>
                     <tr>
                         <td>
@@ -129,12 +135,14 @@
                 </TABLE>
 
                 <p>Ultra fine dust concentration trend of October (Blank means 'All')</p>
-                <TABLE Border=1>
-                    <tr>
-                        <td>City</td>
-                        <td>Dates</td>
-                        <td>Average ultrafine dust</td>
-                    </tr>
+                <TABLE>
+                    <thead>
+                        <tr>
+                            <td>City</td>
+                            <td>Dates</td>
+                            <td>Average ultrafine dust</td>
+                        </tr>
+                    </thead>
                     <?php while ($row = mysqli_fetch_array($result4)) { ?>
                     <tr>
                         <td>

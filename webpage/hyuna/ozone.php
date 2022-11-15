@@ -52,12 +52,14 @@
 
             <FORM>
                 <p>Ozone Ranking of October</p>
-                <TABLE Border=1>
-                    <tr>
-                        <td>Ranking</td>
-                        <td>City</td>
-                        <td>Average Ozone</td>
-                    </tr>
+                <TABLE>
+                    <thead>
+                        <tr>
+                            <td>Ranking</td>
+                            <td>City</td>
+                            <td>Average Ozone</td>
+                        </tr>
+                    </thead>
                     <?php while ($row = mysqli_fetch_array($result1)) { ?>
                     <tr>
                         <td>
@@ -74,12 +76,14 @@
                 </TABLE>
 
                 <p>Ozone concentration trend of October (Blank means 'All')</p>
-                <TABLE Border=1>
-                    <tr>
-                        <td>City</td>
-                        <td>Dates</td>
-                        <td>Average ozone</td>
-                    </tr>
+                <TABLE>
+                    <thead>
+                        <tr>
+                            <td>City</td>
+                            <td>Dates</td>
+                            <td>Average ozone</td>
+                        </tr>
+                    </thead>
                     <?php while ($row = mysqli_fetch_array($result2)) { ?>
                     <tr>
                         <td>
