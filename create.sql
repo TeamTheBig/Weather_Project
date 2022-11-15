@@ -21,3 +21,13 @@ create table new_typhoon_name(
     passwd varchar(20) not null,
     typhoon_name varchar(20) not null,
     primary key (comment_id));
+
+/*Min Ji*/
+CREATE TABLE IF NOT EXISTS HUMIDTABLE (humiddate date NOT NULL, 
+    region_code VARCHAR(4), relative_humidity FLOAT(4), primary key(humiddate, region_code), foreign key(region_code));
+
+CREATE TABLE IF NOT EXISTS PRECIPITAIONTABLE (raindate date NOT NULL, 
+    region_code Foreign Key VARCHAR(4), precipitation FLOAT(4), primary key(raindate, region_code), foreign key(region_code));
+
+CREATE TABLE IF NOT EXISTS UVTABLE (uvdate date NOT NULL, 
+    region_code Foreign Key VARCHAR(4), insolation FLOAT(4), primary key(uvdate, region_code), foreign key(region_code));
