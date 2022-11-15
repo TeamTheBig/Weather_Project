@@ -68,15 +68,14 @@ CREATE TABLE OZONE (
 );                              
 
  CREATE TABLE tem_comment(
-    comment_id varchar(5) NOT NULL,
+    comment_id varchar(20) NOT NULL,
     passwd int NOT NULL,
-    date date,
     region_code varchar(4),
     user_sensory_tem varchar(10),
     user_clothes varchar(10),
     PRIMARY KEY(comment_id),
     FOREIGN KEY(region_code) REFERENCES region(region_code)
-);       
+);                              
 
  CREATE TABLE visibility(
     date datetime NOT NULL,
