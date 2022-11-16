@@ -42,10 +42,12 @@ div {
   grid-column: 1/ span 5;
   padding-left: 5em;
   padding-right: 5em;
+  text-align: center;
 }
 
 a{
   text-decoration: none;
+  text-align: center;
 }
 
 .grid-footer {
@@ -201,3 +203,18 @@ nav ul li ul li a {
 }
 
 nav .fa.fa-angle-down { margin-left: 6px; }
+
+#updateBtn{
+  padding: 0.5em;
+}
+
+#deleteBtn{
+  padding: 0.5em;
+}
+
+.userBtn{
+  padding: 1em;
+  color: rgb(0, 70, 42);
+  margin: 1em;
+  font-size: 1em;
+}

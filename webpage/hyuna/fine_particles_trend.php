@@ -57,73 +57,96 @@
         <div class="grid-content">
             <?php
             $conn = mysqli_connect("localhost", "team20", "team20", "weather");
-            $query1 = "SELECT CITY, AVG_FINE_DUST
-            ,RANK() OVER(ORDER BY AVG_FINE_DUST) AS RANKING
-            FROM AVG_FINE_DUST";
+
+            $query1 = "SELECT DATES, CITY, AVG_FINE_DUST
+            FROM AVG_FINE_DUST_BY_DATES
+            ORDER BY CITY, DATES";
             $result1 = mysqli_query($conn, $query1);
 
-            $query2 = "SELECT CITY, AVG_ULTRAFINE_DUST
-            ,RANK() OVER(ORDER BY AVG_ULTRAFINE_DUST) AS RANKING
-            FROM AVG_FINE_DUST";
+            $query2 = "SELECT DATES, CITY, AVG_ULTRAFINE_DUST
+            FROM AVG_FINE_DUST_BY_DATES
+            ORDER BY CITY, DATES";
             $result2 = mysqli_query($conn, $query2);
             ?>
 
+
             <FORM>
-                <p>Fine dust Ranking of October</p>
+                <p>Fine dust concentration trend of October (Blank means 'All')</p>
+                <a>You can add new rows to the table below.</a><br>
+                <Input type="text" id="insertCity" placeholder="Enter the city"></button>
+                <Input type="date" id="insertDate"></button>
+                <Input type="text" id="insertAvg" placeholder="Enter the average fine dust"></button>
+                <Input type="submit" id="insertBtn" value="Insert"></button>
                 <TABLE>
                     <thead>
                         <tr>
-                            <td>Ranking</td>
                             <td>City</td>
+                            <td>Dates</td>
                             <td>Average fine dust</td>
+                            <td>You can update the average or delete the whole row</td>
                         </tr>
                     </thead>
                     <?php while ($row = mysqli_fetch_array($result1)) { ?>
                     <tr>
                         <td>
-                            <?= $row['RANKING'] ?>
-                        </td>
-                        <td>
                             <?= $row['CITY'] ?>
                         </td>
                         <td>
+                            <?= $row['DATES'] ?>
+                        </td>
+                        <td>
                             <?= $row['AVG_FINE_DUST'] ?>
+                        </td>
+                        <td>
+                            <Input type="text" id="updateNum"></Input>
+                            <Input type="submit" id="updateBtn" value="Update"></Input>
+                            <Input type="submit" id="deleteBtn"value="Delete"></Input>
                         </td>
                     </tr>
                     <?php } ?>
                 </TABLE>
 
-                <p>Ultra fine dust Ranking of October</p>
+                <p>Ultra fine dust concentration trend of October (Blank means 'All')</p>
+                <a>You can add new rows to the table below.</a><br>
+                <Input type="text" id="insertCity" placeholder="Enter the city"></Input>
+                <Input type="date" id="insertDate"></Input>
+                <Input type="text" id="insertAvg" placeholder="Enter the average ultra fine dust"></Input>
+                <Input type="submit" id="insertBtn" value="Insert"></Input>
                 <TABLE>
                     <thead>
                         <tr>
-                            <td>Ranking</td>
                             <td>City</td>
-                            <td>Average ultra fine dust</td>
+                            <td>Dates</td>
+                            <td>Average ultrafine dust</td>
+                            <td>You can update the average or delete the whole row</td>
                         </tr>
                     </thead>
                     <?php while ($row = mysqli_fetch_array($result2)) { ?>
                     <tr>
                         <td>
-                            <?= $row['RANKING'] ?>
-                        </td>
-                        <td>
                             <?= $row['CITY'] ?>
                         </td>
                         <td>
+                            <?= $row['DATES'] ?>
+                        </td>
+                        <td>
                             <?= $row['AVG_ULTRAFINE_DUST'] ?>
+                        </td>
+                        <td>
+                            <Input type="text" id="updateNum"></Input>
+                            <Input type="submit" id="updateBtn" value="Update"></Input>
+                            <Input type="submit" id="deleteBtn"value="Delete"></Input>
                         </td>
                     </tr>
                     <?php } ?>
                 </TABLE>
             </FORM>
+
             <?php
             mysqli_free_result($result1);
             mysqli_free_result($result2);
+            mysqli_close($conn);
             ?>
-
-            <button type="button" class="userBtn" onclick="location.href='fine_particles_trend.php'">See the concentration trend of
-                October</a>
         </div>
         <div class="grid-footer">
             <li>Big Data Application Team TheBig</li>
