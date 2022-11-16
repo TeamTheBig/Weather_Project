@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>TheBig</title>
-    <link rel="stylesheet" href="./home.css" type="text/css">
+    <link rel="stylesheet" href="./hyuna.css" type="text/css">
     <style>
         table,
         th,
@@ -37,8 +37,8 @@
                     </li>
 
                     <li> <a href="#">Community<i class='fa fa-angle-down'></i></a>
-                        <ul>
-                            <li><a href="#">Service One</a></li>
+                    <ul>
+                            <li><a href="user_satisfaction.php">User Satisfaction</a></li>
                             <li><a href="#">Sensory Temperature</a></li>
                             <li><a href="#">About clothes</a></li>
                         </ul>

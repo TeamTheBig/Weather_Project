@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>TheBig</title>
-    <link rel="stylesheet" href="./home.css" type="text/css">
+    <link rel="stylesheet" href="./hyuna.css" type="text/css">
     <style>
         table,
         th,
@@ -37,8 +37,8 @@
                     </li>
 
                     <li> <a href="#">Community<i class='fa fa-angle-down'></i></a>
-                        <ul>
-                            <li><a href="#">Service One</a></li>
+                    <ul>
+                            <li><a href="user_satisfaction.php">User Satisfaction</a></li>
                             <li><a href="#">Sensory Temperature</a></li>
                             <li><a href="#">About clothes</a></li>
                         </ul>
@@ -60,7 +60,7 @@
             $conn = mysqli_connect("localhost", "team20", "team20", "weather");
             $query1 = "SELECT DATES, CITY, AVG_OZONE
             FROM AVG_OZONE_BY_DATES
-            ORDER BY CITY";
+            ORDER BY CITY, DATES";
             $result1 = mysqli_query($conn, $query1);
             ?>
 
