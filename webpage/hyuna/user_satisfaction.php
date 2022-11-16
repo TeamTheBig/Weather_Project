@@ -16,7 +16,7 @@
 
 <body>
     <?php
-    ini_set('display_errors', '0');
+    ini_set('display_errors', '0'); //에러 사항 웹페이지에 띄우지 않음
     ?>
     <div class="grids">
         <div class="grid-header">
@@ -62,33 +62,45 @@
             ?>
             <FORM action="user_satisfaction.php" method="post">
                 <br>
+                <!-- nickname 이라는 이름으로 유저가 입력한 닉네임을 넘김 -->
+                <!-- satisfactionInsert 이라는 이름으로 유저가 입력한 만족도 커멘트를 넘김 -->
+                <!-- Insert 버튼으로 제출 -->
                 <p>Please leave a comment on how satisfied you are with the information on the webpage.</p>
                 <a>Nickname: <Input type="text" name="nickname"> Enter your Opinion: <Input type="text"
                         name="satisfactionInsert"> <Input type="submit" value="Insert"></a>
                 <br><br>
 
+                <!-- updateIndex 이라는 이름으로 유저가 입력한 인덱스를 넘김 -->
+                <!-- satisfactionUpdate 이라는 이름으로 유저가 입력한 만족도 커멘트를 넘김 -->
+                <!-- Update 버튼으로 제출 -->
                 <p>You can update your opinion by the index</p>
                 <a>Index: <Input type="text" name="updateIndex"> Edit your Opinion: <Input type="text"
                         name="satisfactionUpdate">
                     <Input type="submit" value="Update"></a>
                 <br><br>
 
+                <!-- deleteIndex 이라는 이름으로 유저가 입력한 인덱스를 넘김 -->
+                <!-- Delete 버튼으로 제출 -->
                 <p>You can delete your opinion by the index</p>
                 <a>Index: <Input type="text" name="deleteIndex"> Delete your Opinion <Input type="submit"
                         value="Delete"></a>
                 <br><br>
 
                 <?php
+                /* 만약 nickname이나 satisfactionInsert의 입력값이 비어있으면 에러 처리 */
                 if (empty($_POST['nickname']) || empty($_POST['satisfactionInsert'])) {
                     printf(" ", mysqli_connect_error());
                 } else {
+                    /* USER_SATISFACTION 테이블의 NICKNAME에 nickname값을, USER_SATISFACTION에 satisfactionInsert값을 insert */
                     $insert = "INSERT INTO USER_SATISFACTION(NICKNAME, USER_SATISFACTION) VALUES('{$_POST['nickname']}','{$_POST['satisfactionInsert']}')";
                     $result = mysqli_query($conn, $insert);
                 }
 
+                /* USER_SATISFACTION 테이블의 USERID가 updateIndex인 row의 USER_SATISFACTION column값을 satisfactionUpdate값으로 update */
                 $update = "UPDATE USER_SATISFACTION SET USER_SATISFACTION = '{$_POST['satisfactionUpdate']}' WHERE USERID =  '{$_POST['updateIndex']}'";
                 $result = mysqli_query($conn, $update);
 
+                /* USER_SATISFACTION 테이블의 USERID가 deleteIndex row의 USER_SATISFACTION column값을 delete */
                 $delete = "DELETE FROM USER_SATISFACTION WHERE USERID = '{$_POST['deleteIndex']}'";
                 $result = mysqli_query($conn, $delete);
 
@@ -117,15 +129,11 @@
                         </td>
                     </tr>
                     <?php } ?>
-                </TABLE>
+                </TABLE><br><br>
             </FORM>
             <?php
             mysqli_free_result($result3);
             ?>
-
-            <button type="button" class="userBtn" onclick="location.href='fine_particles_trend.php'">See the
-                concentration trend of
-                October</a>
         </div>
         <div class="grid-footer">
             <li>Big Data Application Team TheBig</li>

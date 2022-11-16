@@ -37,7 +37,7 @@
                     </li>
 
                     <li> <a href="#">Community<i class='fa fa-angle-down'></i></a>
-                    <ul>
+                        <ul>
                             <li><a href="user_satisfaction.php">User Satisfaction</a></li>
                             <li><a href="#">Sensory Temperature</a></li>
                             <li><a href="#">About clothes</a></li>
@@ -58,6 +58,8 @@
 
             <?php
             $conn = mysqli_connect("localhost", "team20", "team20", "weather");
+
+            /* 롤업 이용한 뷰의 날짜, 지역, 평균 오존 정보 select */
             $query1 = "SELECT DATES, CITY, AVG_OZONE
             FROM AVG_OZONE_BY_DATES
             ORDER BY CITY, DATES";
@@ -101,15 +103,16 @@
         </div>
     </div>
 </body>
+
 </html>
 
 <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
     $('nav li').hover(
-        function() {
+        function () {
             $('ul', this).stop().slideDown(200);
         },
-        function() {
+        function () {
             $('ul', this).stop().slideUp(200);
         }
     );

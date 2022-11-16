@@ -58,6 +58,8 @@
 
             <?php
             $conn = mysqli_connect("localhost", "team20", "team20", "weather");
+
+            /* 랭킹 이용한 뷰의 날짜, 지역, 평균 오존 정보 select */
             $query1 = "SELECT CITY, AVG_OZONE 
             ,RANK() OVER(ORDER BY AVG_OZONE) AS RANKING
             FROM AVG_OZONE";

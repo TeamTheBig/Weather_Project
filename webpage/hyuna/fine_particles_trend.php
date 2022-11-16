@@ -58,11 +58,13 @@
             <?php
             $conn = mysqli_connect("localhost", "team20", "team20", "weather");
 
+            /* 롤업 이용한 뷰의 날짜, 지역, 평균 미세먼지 정보 select */
             $query1 = "SELECT DATES, CITY, AVG_FINE_DUST
             FROM AVG_FINE_DUST_BY_DATES
             ORDER BY CITY, DATES";
             $result1 = mysqli_query($conn, $query1);
 
+            /* 롤업 이용한 뷰의 날짜, 지역, 평균 초미세먼지 정보 select */
             $query2 = "SELECT DATES, CITY, AVG_ULTRAFINE_DUST
             FROM AVG_FINE_DUST_BY_DATES
             ORDER BY CITY, DATES";
