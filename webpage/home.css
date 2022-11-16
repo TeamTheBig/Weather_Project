@@ -39,8 +39,9 @@ div {
 
 .grid-content {
   list-style-type: none;
-  grid-column: 2/ span 3;
-  padding: 0.5em;
+  grid-column: 1/ span 5;
+  padding-left: 5em;
+  padding-right: 5em;
 }
 
 a{
@@ -119,6 +120,7 @@ body {
   color: #666;
 }
 table {
+  text-align: center;
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
@@ -130,7 +132,6 @@ td {
 thead {
   background: rgba(0, 70, 42, 0.534);
   color: #fff;
-  text-align: left;
 }
 tr:first-child th:first-child {
   border-top-left-radius: 6px;
