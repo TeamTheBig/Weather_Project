@@ -119,6 +119,23 @@ insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("
 insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-29", "D001",7,7.9);
 insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-30", "D003",7.2,7.2);
 insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-31", "D002",8.7,8.6);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-01", "A001",8.5,7.6);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-01", "B002",5.8,38.2);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-01", "C001",5.2,11.9);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-01", "D001",6.3,11.5);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-01", "H002",2.4,6.8);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-01", "E003",2.3,5.8);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-02", "E002",2.5,10.1);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-02", "E003",6.6,7.2);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-02", "A003",9.3,6.1);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-02", "B003",5.6,10.1);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-02", "C002",3.3,11.2);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-02", "D001",6,10.1);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-03", "H003",6.5,8.6);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-03", "A001",5.9,6.8);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-03", "B001",7,7.9);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-03", "C003",7.2,7.2);
+insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-03", "H002",8.7,8.6);
 
 
 
