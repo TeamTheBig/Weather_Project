@@ -124,6 +124,7 @@ CREATE TABLE UVTABLE (
     PRIMARY KEY(nickname),
     FOREIGN KEY(region_code) REFERENCES region(region_code)
 );       
+         
 
  CREATE TABLE visibility(
     vdate datetime NOT NULL,
