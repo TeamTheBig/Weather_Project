@@ -69,21 +69,14 @@
             $result2 = mysqli_query($conn, $query2);
             ?>
 
-
             <FORM>
                 <p>Fine dust concentration trend of October (Blank means 'All')</p>
-                <a>You can add new rows to the table below.</a><br>
-                <Input type="text" id="insertCity" placeholder="Enter the city"></button>
-                <Input type="date" id="insertDate"></button>
-                <Input type="text" id="insertAvg" placeholder="Enter the average fine dust"></button>
-                <Input type="submit" id="insertBtn" value="Insert"></button>
                 <TABLE>
                     <thead>
                         <tr>
                             <td>City</td>
                             <td>Dates</td>
                             <td>Average fine dust</td>
-                            <td>You can update the average or delete the whole row</td>
                         </tr>
                     </thead>
                     <?php while ($row = mysqli_fetch_array($result1)) { ?>
@@ -97,28 +90,17 @@
                         <td>
                             <?= $row['AVG_FINE_DUST'] ?>
                         </td>
-                        <td>
-                            <Input type="text" id="updateNum"></Input>
-                            <Input type="submit" id="updateBtn" value="Update"></Input>
-                            <Input type="submit" id="deleteBtn"value="Delete"></Input>
-                        </td>
                     </tr>
                     <?php } ?>
                 </TABLE>
 
                 <p>Ultra fine dust concentration trend of October (Blank means 'All')</p>
-                <a>You can add new rows to the table below.</a><br>
-                <Input type="text" id="insertCity" placeholder="Enter the city"></Input>
-                <Input type="date" id="insertDate"></Input>
-                <Input type="text" id="insertAvg" placeholder="Enter the average ultra fine dust"></Input>
-                <Input type="submit" id="insertBtn" value="Insert"></Input>
                 <TABLE>
                     <thead>
                         <tr>
                             <td>City</td>
                             <td>Dates</td>
                             <td>Average ultrafine dust</td>
-                            <td>You can update the average or delete the whole row</td>
                         </tr>
                     </thead>
                     <?php while ($row = mysqli_fetch_array($result2)) { ?>
@@ -132,16 +114,10 @@
                         <td>
                             <?= $row['AVG_ULTRAFINE_DUST'] ?>
                         </td>
-                        <td>
-                            <Input type="text" id="updateNum"></Input>
-                            <Input type="submit" id="updateBtn" value="Update"></Input>
-                            <Input type="submit" id="deleteBtn"value="Delete"></Input>
-                        </td>
                     </tr>
                     <?php } ?>
                 </TABLE>
             </FORM>
-
             <?php
             mysqli_free_result($result1);
             mysqli_free_result($result2);
