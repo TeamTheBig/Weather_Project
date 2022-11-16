@@ -60,11 +60,14 @@
         <div class="grid-content">
             <?php
             $conn = mysqli_connect("localhost", "team20", "team20", "weather");
+
+            /* 랭킹 이용한 뷰의 지역, 평균 미세먼지 정보 select */
             $query1 = "SELECT CITY, AVG_FINE_DUST
             ,RANK() OVER(ORDER BY AVG_FINE_DUST) AS RANKING
             FROM AVG_FINE_DUST";
             $result1 = mysqli_query($conn, $query1);
 
+            /* 랭킹 이용한 뷰의 지역, 평균 초미세먼지 정보 select */
             $query2 = "SELECT CITY, AVG_ULTRAFINE_DUST
             ,RANK() OVER(ORDER BY AVG_ULTRAFINE_DUST) AS RANKING
             FROM AVG_FINE_DUST";
