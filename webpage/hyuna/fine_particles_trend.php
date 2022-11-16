@@ -37,7 +37,7 @@
                     </li>
 
                     <li> <a href="#">Community<i class='fa fa-angle-down'></i></a>
-                    <ul>
+                        <ul>
                             <li><a href="user_satisfaction.php">User Satisfaction</a></li>
                             <li><a href="#">Sensory Temperature</a></li>
                             <li><a href="#">About clothes</a></li>
@@ -48,56 +48,81 @@
         </div>
 
         <div class="grid-logo">
-            <h1 id="logo">Ozone Infomation</h1>
-            <p><br><b>This page will shows the ranking in order of the region with the highest ozone concentration on a
-                    monthly basis.</b></p>
+            <h1 id="logo">Fine particles Infomation</h1>
+            <p><br><b>This page will shows the ranking in order of the region with the highest fine particles and ultra
+                    fine particles concentration on a monthly basis.</b></p>
         </div>
 
 
         <div class="grid-content">
-
             <?php
             $conn = mysqli_connect("localhost", "team20", "team20", "weather");
-            $query1 = "SELECT CITY, AVG_OZONE 
-            ,RANK() OVER(ORDER BY AVG_OZONE) AS RANKING
-            FROM AVG_OZONE";
+
+            $query1 = "SELECT DATES, CITY, AVG_FINE_DUST
+            FROM AVG_FINE_DUST_BY_DATES
+            ORDER BY CITY, DATES";
             $result1 = mysqli_query($conn, $query1);
+
+            $query2 = "SELECT DATES, CITY, AVG_ULTRAFINE_DUST
+            FROM AVG_FINE_DUST_BY_DATES
+            ORDER BY CITY, DATES";
+            $result2 = mysqli_query($conn, $query2);
             ?>
 
             <FORM>
-                <p>Ozone Ranking of October</p>
+                <p>Fine dust concentration trend of October (Blank means 'All')</p>
                 <TABLE>
                     <thead>
                         <tr>
-                            <td>Ranking</td>
                             <td>City</td>
-                            <td>Average Ozone</td>
+                            <td>Dates</td>
+                            <td>Average fine dust</td>
                         </tr>
                     </thead>
                     <?php while ($row = mysqli_fetch_array($result1)) { ?>
                     <tr>
                         <td>
-                            <?= $row['RANKING'] ?>
+                            <?= $row['CITY'] ?>
                         </td>
+                        <td>
+                            <?= $row['DATES'] ?>
+                        </td>
+                        <td>
+                            <?= $row['AVG_FINE_DUST'] ?>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </TABLE>
+
+                <p>Ultra fine dust concentration trend of October (Blank means 'All')</p>
+                <TABLE>
+                    <thead>
+                        <tr>
+                            <td>City</td>
+                            <td>Dates</td>
+                            <td>Average ultrafine dust</td>
+                        </tr>
+                    </thead>
+                    <?php while ($row = mysqli_fetch_array($result2)) { ?>
+                    <tr>
                         <td>
                             <?= $row['CITY'] ?>
                         </td>
                         <td>
-                            <?= $row['AVG_OZONE'] ?>
+                            <?= $row['DATES'] ?>
+                        </td>
+                        <td>
+                            <?= $row['AVG_ULTRAFINE_DUST'] ?>
                         </td>
                     </tr>
                     <?php } ?>
                 </TABLE>
             </FORM>
-
             <?php
             mysqli_free_result($result1);
+            mysqli_free_result($result2);
             mysqli_close($conn);
             ?>
-
-            <button type="button" class="userBtn" onclick="location.href='ozone_trend.php'">See the
-                concentration trend of
-                October</a>
         </div>
         <div class="grid-footer">
             <li>Big Data Application Team TheBig</li>
