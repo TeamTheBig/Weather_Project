@@ -40,9 +40,7 @@
     </Head>
     <Body>
         <?php
-            //include_once ("login.php");
-            //include_once("createRainTable.php");
-            //include_once ("insertRainTable.php");
+
             $host = 'localhost';
             $user = 'team20';
             $pw = 'team20';
@@ -55,6 +53,7 @@
             $rainday = $_POST["inputraindate"];
             $rainregion = $_POST['inputrainregion'];
 
+            //SELECT
             //date와 region code가 모두 입력되었으면 해당하는 행을 가져옴.
             if(isset($rainday) && isset($rainregion)){
                 $sql = "SELECT * FROM PRECIPITAIONTABLE WHERE raindate = '".$rainday."' and region_code = '".$rainregion."'";
@@ -71,6 +70,7 @@
                 <a href="./home.html" class="grid-header">Home</a>
             </div>
         </div>
+        <!--사용자의 input을 통해 검색한 결과를 보여주는 table-->
         <div class="search">
             <table>
                 <caption> <?php echo $rainregion; ?> </caption>

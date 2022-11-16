@@ -24,6 +24,7 @@
             $deleteday = $_POST["deletedate"];
             $deleteregion = $_POST['deleteregion'];
 
+            //DELETE
             //date와 region을 입력받아서 uvtable에서 내용 삭제
             if(isset($deleteday) && isset($deleteregion)){
                 $sql = "DELETE FROM uvtable where uvdate = '".$deleteday."' and region_code = '".$deleteregion."'";
@@ -31,6 +32,7 @@
                 //echo "success";
             }
         ?>
+        <!--사용자의 input을 통해 삭제한 경우 뜨는 문구-->
         <div class="success">SUCCESSFULLY DELETED</div>
     </Body>
 

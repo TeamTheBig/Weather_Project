@@ -40,9 +40,7 @@
     </Head>
     <Body>
         <?php
-            //include ("login.php");
-            //include_once("createUVTable.php");
-            //include_once ("insertUVTable.php");
+
             $host = 'localhost';
             $user = 'team20';
             $pw = 'team20';
@@ -55,6 +53,7 @@
             $uvday = $_POST["inputuvdate"];
             $uvregion = $_POST['inputuvregion'];
 
+            //SELECT
             //date와 region code가 모두 입력되었으면 해당하는 row를 가져옴.
             if(isset($uvday) && isset($uvregion)){
                 
@@ -71,6 +70,7 @@
                 <a href="./home.html" class="grid-header">Home</a>
             </div>
         </div>
+        <!--사용자의 input을 통해 검색한 결과를 보여주는 table-->
         <div class="search">
             <table >
                 <caption> <?php echo $uvregion; ?> </caption>

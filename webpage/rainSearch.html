@@ -16,11 +16,12 @@
                     <p><br><b>for October, 2022</b></p>
             </div>
 
-
+            <!--사용자의 input을 입력받기 위한 부분-->
             <div class="info">
-                <form action = "../table/getRainTable.php" method = "POST">
+                <form action = "./getRainTable.php" method = "POST">
                     <div class = "raininfo">
                         <p> Search </p>
+                        <!--date, region code를 입력하고 go 버튼을 누르면 getRainTable.php로 데이터가 전송된다.-->
                         <input type = "date" name = "inputraindate" min="2022-10-01" max="2022-10-31">
                         <input type = "text" name = "inputrainregion" size = "10" placeholder="region code">
                         <input type = "submit" class="raindate-button" id="raindate-button" value = "GO"/>
@@ -28,8 +29,9 @@
                 </form>
             </div>
 
+            <!--사용자가 region code를 참고하여 이용할 수 있게 해주는 박스-->
             <div class = "regioninfo" style = "width : 300px; height : 300px; padding:5%; text-align : center;
-            background-color: antiquewhite; border : 1px solid gray; border-radius: 5px; margin-top : 10%; margin-left:30%">
+            background-color: rgb(19, 54, 19); color:white; border : 1px solid gray; border-radius: 5px; margin-top : 10%; margin-left:30%">
                 <p>
                     <i>Region Code</i> <br><br>
                     Paju-si, Gyeonggi-do(B005)<br> Suwon-si, Gyeonggi-do(B002)<br> Chuncheon-si, Gangwon-do(C004)<br> 

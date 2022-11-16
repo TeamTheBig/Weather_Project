@@ -40,9 +40,7 @@
     </Head>
     <Body>
         <?php
-            //include_once ("login.php");
-            //include_once("createHumidTable.php");
-            //include_once ("insertHumidTable.php");
+
             $host = 'localhost';
             $user = 'team20';
             $pw = 'team20';
@@ -55,6 +53,7 @@
             $humidday = $_POST["inputhumiddate"];
             $humidregion = $_POST['inputhumidregion'];
 
+            //SELECT
             //사용자로부터 date와 region code를 모두 입력 받았으면 테이블에서 해당 데이터에 해당하는 행을 가져옴.
             if(isset($humidday) && isset($humidregion)){
                 $sql = "SELECT * FROM humidtable WHERE humiddate = '".$humidday."' and region_code = '".$humidregion."'";
@@ -72,6 +71,7 @@
             </div>
             
         </div>
+        <!--사용자의 input을 통해 검색한 결과를 보여주는 table-->
         <div class="search">
             <table>
                 <caption> <?php echo $humidregion; ?> </caption>
