@@ -51,32 +51,36 @@
         </div>
 
         <div class="grid-logo">
-            <h1 id="logo">Fine particles Infomation</h1>
-            <p><br><b>This page will shows the ranking in order of the region with the highest fine particles and ultra
-                    fine particles concentration on a monthly basis.</b></p>
+            <h1 id="logo">User satisfaction</h1>
+            <p><br><b>On this page you can leave, edit or delete comments.</b></p>
         </div>
 
 
         <div class="grid-content">
             <?php
-        $conn = mysqli_connect("localhost", "team20", "team20", "weather");
-        ?>
+            $conn = mysqli_connect("localhost", "team20", "team20", "weather");
+            ?>
             <FORM action="user_satisfaction.php" method="post">
-                <p>Please leave your comment by satisfaction with the above information.</p>
+                <br>
+                <p>Please leave a comment on how satisfied you are with the information on the webpage.</p>
                 <a>Nickname: <Input type="text" name="nickname"> Enter your Opinion: <Input type="text"
                         name="satisfactionInsert"> <Input type="submit" value="Insert"></a>
-                <br>
+                <br><br>
 
-                <p>You can update or delete your opinion</p>
+                <p>You can update your opinion by the index</p>
                 <a>Index: <Input type="text" name="updateIndex"> Edit your Opinion: <Input type="text"
                         name="satisfactionUpdate">
-                    <Input type="submit" value="Update"></a> <br>
+                    <Input type="submit" value="Update"></a>
+                <br><br>
+
+                <p>You can delete your opinion by the index</p>
                 <a>Index: <Input type="text" name="deleteIndex"> Delete your Opinion <Input type="submit"
                         value="Delete"></a>
+                <br><br>
 
                 <?php
                 if (empty($_POST['nickname']) || empty($_POST['satisfactionInsert'])) {
-                    printf("Connect failed: %s\n", mysqli_connect_error());
+                    printf(" ", mysqli_connect_error());
                 } else {
                     $insert = "INSERT INTO USER_SATISFACTION(NICKNAME, USER_SATISFACTION) VALUES('{$_POST['nickname']}','{$_POST['satisfactionInsert']}')";
                     $result = mysqli_query($conn, $insert);
