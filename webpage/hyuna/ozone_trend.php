@@ -58,62 +58,69 @@
 
             <?php
             $conn = mysqli_connect("localhost", "team20", "team20", "weather");
-            $query1 = "SELECT CITY, AVG_OZONE 
-            ,RANK() OVER(ORDER BY AVG_OZONE) AS RANKING
-            FROM AVG_OZONE";
+            $query1 = "SELECT DATES, CITY, AVG_OZONE
+            FROM AVG_OZONE_BY_DATES
+            ORDER BY CITY";
             $result1 = mysqli_query($conn, $query1);
             ?>
 
             <FORM>
-                <p>Ozone Ranking of October</p>
+                <p>Ozone concentration trend of October (Blank means 'All')</p>
+                <a>You can add new rows to the table below.</a><br>
+                <Input type="text" id="insertCity" placeholder="Enter the city"></Input>
+                <Input type="date" id="insertDate"></Input>
+                <Input type="text" id="insertAvg" placeholder="Enter the average ozone"></Input>
+                <Input type="submit" id="insertBtn" value="Insert"></Input>
                 <TABLE>
                     <thead>
                         <tr>
-                            <td>Ranking</td>
                             <td>City</td>
-                            <td>Average Ozone</td>
+                            <td>Dates</td>
+                            <td>Average ozone</td>
+                            <td>You can update the average or delete the whole row</td>
                         </tr>
                     </thead>
                     <?php while ($row = mysqli_fetch_array($result1)) { ?>
                     <tr>
                         <td>
-                            <?= $row['RANKING'] ?>
+                            <?= $row['CITY'] ?>
                         </td>
                         <td>
-                            <?= $row['CITY'] ?>
+                            <?= $row['DATES'] ?>
                         </td>
                         <td>
                             <?= $row['AVG_OZONE'] ?>
                         </td>
+                        <td>
+                            <Input type="text" id="updateNum"></Input>
+                            <Input type="submit" id="updateBtn" value="Update"></Input>
+                            <Input type="submit" id="deleteBtn"value="Delete"></Input>
+                        </td>
                     </tr>
                     <?php } ?>
                 </TABLE>
+
             </FORM>
 
             <?php
             mysqli_free_result($result1);
             mysqli_close($conn);
             ?>
-
-            <button type="button" class="userBtn" onclick="location.href='ozone_trend.php'">See the
-                concentration trend of
-                October</a>
         </div>
         <div class="grid-footer">
             <li>Big Data Application Team TheBig</li>
         </div>
     </div>
 </body>
-
 </html>
 
 <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
     $('nav li').hover(
-        function () {
+        function() {
             $('ul', this).stop().slideDown(200);
         },
-        function () {
+        function() {
             $('ul', this).stop().slideUp(200);
         }
     );
