@@ -17,15 +17,34 @@
 <body>
     <div class="grids">
         <div class="grid-header">
-            <a href="home.html" class="grid-header">Home</a>
-            <a href="00.html" class="grid-header">page1</a>
-            <a href="00.html" class="grid-header">page1</a>
-            <a href="00.html" class="grid-header">page2</a>
-            <a href="00.html" class="grid-header">page2</a>
-            <a href="00.html" class="grid-header">page3</a>
-            <a href="00.html" class="grid-header">page3</a>
-            <a href="fine_particles.php" class="grid-header">Fine particles</a>
-            <a href="ozone.php" class="grid-header">Ozone particles</a>
+            <nav>
+                <ul>
+                    <li><a href="home.html" class="grid-header">Home</a></li>
+
+                    <li> <a href="#">Weather Information<i class='fa fa-angle-down'></i></a>
+                        <ul>
+                            <li><a href="#">Category One</a></li>
+                            <li><a href="#">Category Two</a></li>
+                            <li><a href="visibility.php">Visiable Distance</a></li>
+                        </ul>
+                    </li>
+
+                    <li> <a href="#">Ranking<i class='fa fa-angle-down'></i></a>
+                        <ul>`
+                            <li><a href="fine_particles.php">Fine particles</a></li>
+                            <li><a href="ozone.php">Ozone</a></li>
+                        </ul>
+                    </li>
+
+                    <li> <a href="#">Community<i class='fa fa-angle-down'></i></a>
+                        <ul>
+                            <li><a href="#">Service One</a></li>
+                            <li><a href="#">Sensory Temperature</a></li>
+                            <li><a href="#">About clothes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </div>
 
         <div class="grid-logo">
@@ -172,5 +191,16 @@
         </div>
     </div>
 </body>
-
 </html>
+
+<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $('nav li').hover(
+        function() {
+            $('ul', this).stop().slideDown(200);
+        },
+        function() {
+            $('ul', this).stop().slideUp(200);
+        }
+    );
+</script>
