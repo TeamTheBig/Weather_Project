@@ -171,6 +171,27 @@ td {
 }
 
 #button button{
+    border: 1px solid gainsboro;
+    background-color: rgba(0,0,0,0);
+    color: teal;
+    padding: 5px;
+}
+
+.success{
+    font-size: 100px;
+    color:darkgreen;
+    font-weight: bold;
+    margin-left:30%;
+    margin-right:20%;
+    margin-top : 10%;
+}
+
+.search{
+    place-items: center;
+    border-color: darkgreen;
+    border-radius: 5px;
+    font-size:30px;
+}
 
 
   
