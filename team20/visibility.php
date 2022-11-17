@@ -56,8 +56,8 @@
         <br></br> <br></br> 
             <!-- 사용자로부터 검색하고 싶은 날짜 받기 -->
             <label > Choose the date you want to check:
-                <input type="date" name="chosedDate" min="2022-10-01" max="2022-10-30" value="2022-10-01">
-                <input type="submit" name="submit" value="Submit">
+                <input type="date" name="chosedDate" min="2022-10-01" max="2022-10-30" >
+                <input type="submit" name="submit" value="Search">
             </label>
             <br></br> <br></br> <br></br>
         </form>

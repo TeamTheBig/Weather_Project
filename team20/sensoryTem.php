@@ -58,10 +58,10 @@
         <!-- 사용자로부터 검색하고 싶은 날짜와 지역이름 받기 -->
         <form method="POST">
                 Choose the date you want to check the sensible temperature:
-                <input type="date" name="chosedDate" min="2022-10-01" max="2022-10-30" value="2022-10-01"> <br>
+                <input type="date" name="chosedDate" min="2022-10-01" max="2022-10-30" > <br>
                 Wirte your city:
                 <input type="text" name="chosedCity">
-                <input type="submit" name="submit" value="Check">
+                <input type="submit" name="submit" value="Search">
             
         </form>
         </div>

@@ -1,6 +1,9 @@
 <?php
 error_reporting(E_ALL ^ E_WARNING);
+
 $link = mysqli_connect("localhost", "team20", "team20", "team20");
+//transaction 시작
+$link->begin_transaction();
 
 // Check connection
 if ($link === false) {

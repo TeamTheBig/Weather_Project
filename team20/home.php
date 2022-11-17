@@ -56,25 +56,25 @@
 
 
             <div class="grid-content">
+                 <br><br>
 
                 <p>Welcome to our homepage!</p>
                 <br><br>
                 <!-- 사용자에게 세션에 저장해서 사용할 이름을 text로 받아서 name.php를 실행한다-->
                 <p>what is your name?</p>
-                <form method = "post" action = "name.php">
-                <table>  
-                <tr><td>name</td> 
-                    <td><input type = text name = name size=10 maxlength=20></td>
-                    <td><input type = "submit" value="save"></td>
-                </tr>
-                </table>
-                </form>   
+                <form method = "post" action = "name.php">              
+                name :
+                    <input type = text name = name size=10 maxlength=20>
+                    <input type = "submit" value="save">
+                    <br><br>
+                </form>     
 
                 <?php #사용자에게서 이미 받은 name이 있을 경우에만 delecte 버튼을 띄워서 클릭시 deleteName.php를 실행한다.
                 if(isset($_SESSION['name'])){ ?>
                     <form action = "deleteName.php">
                     <input type='button' value = 'Delete' onclick = "location.href='http://localhost/team20/deleteName.php'">
                     </form>
+                    <br><br><br><br><br><br>
                 <?php }
                 ?>          
                 
