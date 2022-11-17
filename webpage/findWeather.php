@@ -111,7 +111,7 @@
                                 where t.region_code = r.region_code";
                         
                         $res2 = mysqli_query($link, $sql); #두번째 퀴리를 실행
-                        $adarea_count = mysqli_num_rows($res2); #행정구역의 개수를 저장
+                        $adarea_count = mysqli_num_rows($res2); #행정구역의 개수를 저장, 날짜를 한번씩만 출력하기 위해 사용
                         $count = $adarea_count; #줄 바꿈을 위해 사용 됨
                         while($newArray = mysqli_fetch_array($res, MYSQLI_ASSOC)){ #첫번째 쿼리의 결과를 배열에 저장
                             $mdate = $newArray['mdate'];
