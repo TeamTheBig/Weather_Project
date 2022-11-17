@@ -115,15 +115,13 @@ CREATE TABLE UVTABLE (
     FOREIGN KEY(region_code) REFERENCES region(region_code)
 );                              
 
- CREATE TABLE tem_comment(
+ CREATE TABLE comment(
     nickname varchar(20) NOT NULL,
     passwd varchar(20) NOT NULL,
-    region_code char(4) NOT NULL,
-    user_sensory_tem varchar(10),
-    user_clothes varchar(10),
-    PRIMARY KEY(nickname),
-    FOREIGN KEY(region_code) REFERENCES region(region_code)
-);       
+    user_comment varchar(100),
+    PRIMARY KEY(nickname)
+);                              
+
          
 
  CREATE TABLE visibility(
