@@ -1353,7 +1353,8 @@ insert into temperature values ('2022-10-27', 'I001', 15.2, 11, 20.9);
 insert into temperature values ('2022-10-28', 'I001', 15.3, 9.4, 21.1);
 insert into temperature values ('2022-10-29', 'I001', 15.4, 11.8, 20.2);
 insert into temperature values ('2022-10-30', 'I001', 14.2, 11.2, 18.4);
-insert into temperature values ('2022-10-31', 'I001', 14.4, 10.1, 19.5);INSERT INTO sensory_temperature(sdate, region_code, sensory_tem, wind) VALUES("2022-10-17",'A001','6.4','20.5');
+insert into temperature values ('2022-10-31', 'I001', 14.4, 10.1, 19.5);
+INSERT INTO sensory_temperature(sdate, region_code, sensory_tem, wind) VALUES("2022-10-17",'A001','6.4','20.5');
 INSERT INTO sensory_temperature(sdate, region_code, sensory_tem, wind) VALUES("2022-10-18",'A001','3','9.4');
 INSERT INTO sensory_temperature(sdate, region_code, sensory_tem, wind) VALUES("2022-10-19",'A001','2.4','8.6');
 INSERT INTO sensory_temperature(sdate, region_code, sensory_tem, wind) VALUES("2022-10-20",'A001','4.1','9.4');
@@ -1378,7 +1379,6 @@ INSERT INTO sensory_temperature(sdate, region_code, sensory_tem, wind) VALUES("2
 insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-08", "A003",9.2,5);
 insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-12", "A004",6,6.1);
 insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-18", "A003",5.3,13.3);
-insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-19", "A003",4.1,4);
 insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-20", "A004",2.5,5.8);
 insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-21", "A003",6.9,5);
 insert into sensory_temperature(sdate, region_code, sensory_tem, wind) values ("2022-10-24", "A003",7,6.5);
