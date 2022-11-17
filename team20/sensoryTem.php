@@ -94,10 +94,17 @@
                 if ($link === false) {
                     die("ERROR: Could not connect. " . mysqli_connect_error());
                 }
+                
 
                 //사용자로부터 입력받은 날짜와 지역이름
                 $chosedDate = $_POST["chosedDate"];
                 $chosedCity = $_POST["chosedCity"];
+
+                if ((empty($chosedDate)) or (empty($chosedCity))) {
+                    echo "<script>alert('Blanks are not allowed.');</script>"; 
+                    exit();
+                }
+
                 //SELECT 문
                 $sql = "SELECT  s.sdate, s.sensory_tem, s.wind,  r.city 
                                 FROM sensory_temperature AS s JOIN region AS r 
@@ -108,16 +115,20 @@
                 $res = mysqli_query($link, $sql);
         
                 if ($res) {
-                    $newArray = mysqli_fetch_array($res, MYSQLI_ASSOC);
-                    echo
-                    '<tc><td>'
-                    . $newArray['city'] .
-                    '<tc><td>'
-                    . $newArray['sensory_tem'] .
-                    '<tc><td>'
-                    .$newArray['wind'].
-                    '<tr>'
-                    ;
+                    if($newArray = mysqli_fetch_array($res, MYSQLI_ASSOC)){
+                        echo
+                        '<tc><td>'
+                        . $newArray['city'] .
+                        '<tc><td>'
+                        . $newArray['sensory_tem'] .
+                        '<tc><td>'
+                        .$newArray['wind'].
+                        '<tr>'
+                        ;
+                    }else{
+                        echo "<script>alert('You enter the wrong region.');</script>";
+                    }
+
 
                 } else {
                     echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
@@ -155,3 +166,4 @@ $('nav li').hover(
     }
 );
 </script>
+
