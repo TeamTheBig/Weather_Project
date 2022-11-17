@@ -250,8 +250,13 @@ insert into visibility( visi_dist, region_code, vdate) values (92,"A008","2022-1
 
 
 
-insert into tem_comment(comment_id, passwd, region_code, user_sensory_tem, user_clothes ) values ('dghjj','1111', 'A001','good', 'coat');
-insert into tem_comment(comment_id, passwd, region_code, user_sensory_tem, user_clothes ) values ('sdfgh','1111', 'B003','good', 'coat');
-insert into tem_comment(comment_id, passwd, region_code, user_sensory_tem, user_clothes ) values ('apple','1111', 'H003','hot', 'long sleeve');
-insert into tem_comment(comment_id, passwd, region_code, user_sensory_tem, user_clothes ) values ('kiwi','1111', 'A001','good', 'coat');
-insert into tem_comment(comment_id, passwd, region_code, user_sensory_tem, user_clothes ) values ('BMW','1111', 'C003','cold', 'parka');
+insert into comment(nickname, passwd, user_comment ) values ('cutey','1111','I think it was colder than that information.');
+insert into comment(nickname, passwd, user_comment ) values ('banana','1111','Good data!');
+insert into comment(nickname, passwd, user_comment ) values ('apple','1111', 'Hi guys~');
+insert into comment(nickname, passwd, user_comment ) values ('kiwi','1111','I want to go to Busan!!');
+insert into comment(nickname, passwd, user_comment ) values ('BMW','1111', 'It is too cold here');
+insert into comment(nickname, passwd, user_comment ) values ('Toto','1111','I like windy days');
+insert into comment(nickname, passwd, user_comment ) values ('chang','1111','How nice weather');
+insert into comment(nickname, passwd, user_comment ) values ('Maria','1111', 'Have a nice day:)');
+insert into comment(nickname, passwd, user_comment ) values ('SQL','1111','Good morning!');
+insert into comment(nickname, passwd, user_comment ) values ('PHP','1111', 'Too bad:(');
