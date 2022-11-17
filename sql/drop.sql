@@ -11,7 +11,7 @@ drop table PRECIPITAIONTABLE;
 /*Yeonsoo*/
 DROP TABLE sensory_temperature;
 DROP TABLE visibility;
-DROP TABLE tem_comment;
+DROP TABLE comment;
 
 /*Hyuna*/
 DROP VIEW AVG_OZONE;
