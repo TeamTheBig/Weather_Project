@@ -46,7 +46,7 @@
         </div>
 
         <div class="grid-logo">
-            <h1 id="logo">Visiable Distance</h1>
+            <h1 id="logo">Visible Distance</h1>
             <br>
                     <p><b><?php #모든 페이지 상단에 삽입
                     session_start();  #php 세션 사용
@@ -74,7 +74,7 @@
                     <tr>
                         <th>Region</th>
                         <th>Date and Time</th>
-                        <th>visiable distacne(10m)</th>
+                        <th>visible distacne(10m)</th>
                     </tr>
                 </thead>
 
