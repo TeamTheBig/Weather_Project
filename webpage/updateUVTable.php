@@ -34,9 +34,14 @@
                 $res = mysqli_query($mysqli, $sql); 
                 //echo "Successful";
             }
+            else{
+                $sql = "INSERT INTO uvtable (uvdate, region_code, insolation) VALUES ('".$updateday."', '".$updateregion."', '".$updateinsolation."')";
+                //"UPDATE uvtable set insolation = '".$updateinsolation."' where uvdate = '".$updateday."' and region_code = ''";
+                $res = mysqli_query($mysqli, $sql);
+            }
         ?>
         <!--사용자의 input을 통해 삭제한 경우 뜨는 문구-->
-        <div class="success">SUCCESSFULLY UPDATED</div>
+        <div class="success">SUCCESSFULLY INSERTED OR UPDATED</div>
     </Body>
 
 </Html>
