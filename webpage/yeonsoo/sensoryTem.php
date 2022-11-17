@@ -64,7 +64,7 @@
 
         <div class="grid-content">
                 <?php
-        
+               
                 $link = mysqli_connect("localhost", "team20", "team20", "team20");
         
                 // Check connection
