@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TheBig</title>
+        <link rel="stylesheet" href="./home.css" type="text/css">
+    </head>
+    <body>
+        <div class="grids">
+
+            <div class="grid-header">
+                <nav>
+                    <ul>
+                        <li><a href="home.html" class="grid-header">Home</a></li>
+
+                        <li> <a href="#">Weather Information<i class='fa fa-angle-down'></i></a>
+                            <ul>`
+                                <li><a href="#">Category One</a></li>
+                                <li><a href="#">Category Two</a></li>
+                                <li><a href="visibility.php">Visiable Distance</a></li>
+                            </ul>
+                        </li>
+
+                        <li> <a href="#">Ranking<i class='fa fa-angle-down'></i></a>
+                            <ul>`
+                                <li><a href="#">Ranking One</a></li>
+                                <li><a href="#">Ranking Two</a></li>
+                                <li><a href="#">Ranking Three</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li> <a href="#">Community<i class='fa fa-angle-down'></i></a>
+                            <ul>
+                                <li><a href="#">Service One</a></li>
+                                <li><a href="#">Sensory Temperature</a></li>
+                                <li><a href="#">About clothes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="grid-logo">
+                <h1 id="logo">title</h1>
+                    <p><br><b>sub title</b></p>
+            </div>
+
+
+            <div class="grid-content">
+            
+            </div>
+
+            <div class="grid-footer">
+                <li>Big Data Application Team TheBig</li>
+            </div>
+            
+        </div>
+    </body>
+</html>
+
+<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $('nav li').hover(
+        function() {
+            $('ul', this).stop().slideDown(200);
+        },
+        function() {
+            $('ul', this).stop().slideUp(200);
+        }
+    );
+</script>

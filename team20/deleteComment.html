@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TheBig</title>
+    <link rel="stylesheet" href="./home.css" type="text/css">
+</head>
+
+<body>
+    <div class="grids">
+        <!-- 상단 메뉴 바 -->
+        <div class="grid-header">
+            <nav>
+                <ul>
+                <li><a href="home.php" class="grid-header">Home</a></li>
+            
+                    <li> <a href="#">Weather Information<i class='fa fa-angle-down'></i></a>
+                        <ul>`
+                            <li><a href="uvPage.html">Insolation</a></li>
+                            <li><a href="humidSearch.html">Humidity</a></li>
+                            <li><a href="rainSearch.html">Rain</a></li>
+                            <li><a href="findWeather.php">Weather</a></li>
+                            <li><a href="typhoon.php">Typhoon</a></li>
+                            <li><a href="sensoryTem.php">Sensory Temperature</a></li>
+                            <li><a href="visibility.php">Visiable Distance</a></li>
+                        </ul>
+                    </li>
+            
+                    <li> <a href="#">Ranking<i class='fa fa-angle-down'></i></a>
+                        <ul>`
+                            <li><a href="fine_particles.php">Fine particles</a></li>
+                            <li><a href="ozone.php">Ozone</a></li>
+                        </ul>
+                    </li>
+            
+                    <li> <a href="#">Community<i class='fa fa-angle-down'></i></a>
+                        <ul>
+                            <li><a href="user_satisfaction.php">Satisfaction</a></li>
+                            <li><a href="showcomment.php">Comment</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+
+        </div>
+
+        <!-- 제목 및 부제목 -->
+        <div class="grid-logo">
+            <h1 id="logo">Delete your comment</h1>
+            <p><br><b>You can delete your comment. <br>But, you have to remember your nickname and password</b> </P>
+        
+        </div>
+
+
+        <div class="grid-content">
+            <br></br>
+        </div>
+        
+       
+
+
+        <div class="grid-info">
+            <!-- 사용자로부터 delete할 comment의 데이터를 입력받아 php로 전달-->
+            <form action="deleteComment.php" method="POST">
+                <!-- TABLE comment의 nickname, passwd 입력받기  -->
+                <!-- DELETE문 실행시 user_comment 데이터는 사용되지 않음으로 입력받지 않음  -->
+                <p><b>If you want to delete your comment in this page, veritify your nickname and password</b><br><br>
+                <p>Nickname : <input type="text" name="del_nickname" size="15">
+                <p>Password : <input type="password" name="del_pwd" size="15">
+                    <br></br>
+                <br>
+                <p><input type="submit" value="delete" ></p>
+        
+            </form>
+
+
+        </div>
+
+        <!-- 댓글 확인 (showComment.php로 화면 이동)-->
+        <div class="grid-content">
+            <p>Show the comments
+            <p><input type="submit" value="comments" onClick="location.href='showComment.php'"></p>
+          </div>    
+
+        <div class="grid-footer">
+            <li>Weather Information Web page By Team TheBig</li>
+        </div>
+
+    </div>
+</body>
+
+
+</html>
+
+
+<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+$('nav li').hover(
+    function () {
+        $('ul', this).stop().slideDown(200);
+    },
+    function () {
+        $('ul', this).stop().slideUp(200);
+    }
+);
+</script>

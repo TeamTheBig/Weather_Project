@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rain Page</title>
+        <link rel="stylesheet" href="./home.css" type="text/css">
+    </head>
+    <body>
+        <div class="grids">
+            <div class="grid-header">
+                <a href="home.php" class="grid-header">Home</a>
+            </div>
+
+            <div class="grid-logo">
+                <h1 id="logo">Get Humidity Information Here!</h1>
+                    <p><br><b>for October, 2022</b></p>
+            </div>
+
+
+            <!--사용자의 input을 입력받기 위한 부분-->
+            <div class="info">
+                <form action = "./getHumidTable.php" method = "POST">
+                    <div class = "humidsearch">
+                        <p> Search </p>
+                        <!--date, region code를 입력하고 go 버튼을 누르면 getHumidTable.php로 데이터가 전송된다.-->
+                        <input type = "date" name = "inputhumiddate" min="2022-10-01" max="2022-10-31">
+                        <input type = "text" name = "inputhumidregion" size = "10" placehoder="region code">
+                        <input type = "submit" class="humiddate-button" id="humiddate-button" value = "GO"/>
+                    </div>
+                </form>
+            </div>
+
+            <!--사용자가 region code를 참고하여 이용할 수 있게 해주는 박스-->
+            <div class = "regioninfo" style = "width : 300px; height : 300px; padding:5%; text-align : center;
+            background-color: rgb(19, 54, 19); color:white; border : 1px solid gray; border-radius: 5px; margin-top : 10%; margin-left:30%">
+                <p>
+                    <i>Region Code</i> <br><br>
+                    Paju-si, Gyeonggi-do(B005)<br> Suwon-si, Gyeonggi-do(B002)<br> Chuncheon-si, Gangwon-do(C004)<br> 
+                    Gangneung-si, Gangwon-do(C001)<br> Seoul(A001) <br> Incheon(A004) <br>
+                    Ulleung-gun, Gyeongsangbuk-do(H004)<br> Chungju-si, Chungcheongbuk-do(D002) <br> Daejeon(A006)<br> 
+                    Daegu(A003)<br> Jeonju-si, Jeollabuk-do(F005)<br>
+                </p>
+            </div>
+            
+            <div class="grid-footer" style="position:relative; top : 200px;">
+                <li>Big Data Application Team TheBig</li>
+            </div>
+        </div>
+    </body>
+</html>

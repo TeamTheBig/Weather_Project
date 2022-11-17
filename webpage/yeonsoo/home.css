@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.grids{
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 1fr 20%;
+}
+
+div {
+    background-color: rgba( 255, 255, 255, 0.5 );
+}
+
+.grid-header{
+    background-color:rgb(0, 70, 42);
+    text-decoration: none;
+    color:white;
+    grid-column: 1 / span 5;
+    display: inline;
+    text-align: center;
+    padding: 0.8em;
+    padding-top: 1em;
+    word-spacing: 0.1em;
+    font-weight: bold;
+}
+
+.grid-header:hover { color : black;}
+
+.grid-logo{
+    color: rgb(0, 70, 42);
+    text-align: center;
+    grid-column: 1 / span 5;
+    padding: 3em;
+    font-size: 1.3em;
+    background-color:rgb(213, 247, 226);
+}
+
+
+.grid-content {
+    grid-column: 2/ span 3;
+    list-style-type: none;
+    padding: 0.5em;
+}
+
+
+.grid-info {
+    list-style-type: none;
+    background-color: rgb(230, 250, 195);
+    grid-column: 2/ span 3;
+    padding: 1em;
+    padding-top: 1em;
+}
+
+a{
+    text-decoration: none;
+}
+
+.grid-footer {
+    list-style-type: none;
+    background-color:rgb(0, 0, 0);
+    color:white;
+    text-align: center;
+    grid-column: 1 / span 5;
+    padding: 0.8em;
+    padding-top: 0.5em; 
+    font-size: 0.9em;
+}
+
+
+
+
+/* 
+    For dropdown MenuBar 
+*/
+
+nav ul {
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    display: block;
+    font-size: 19px;
+    padding: 15px 14px;
+    transition: 0.3s linear;
+}
+
+
+nav ul li ul {
+    border-bottom: 5px solid #FFFFFF;
+    display: none;
+    position: absolute;
+    width: 200px;
+}
+
+nav ul li ul li {
+    border-top: 0px ;
+    display: block;
+} 
+
+nav ul li ul li:first-child { border-top: none; }
+
+nav ul li ul li a {
+    background: #373737;
+    display: block;
+    padding: 10px 14px;
+}
+
+nav .fa.fa-angle-down { margin-left: 6px; }
+
+
+
+/* for table */
+table {
+    width: 100%;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #dadada; 
+    text-align: center;
+}
