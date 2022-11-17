@@ -38,7 +38,7 @@ if ($res = mysqli_query($link, $sql)) {
                      WHERE nickname = '" . $nickname . "'";
             $res = mysqli_query($link, $sql);
             echo "<script>alert('Comment modified successfully.');</script>";
-            $link->rollback(); 
+            $link->commit(); //commit
         } else {
             //사용자가 입력한 passwd가 table에 저장되어있는 값과 동일하지 않음
             echo "<script>alert('You enter the wrong password.');</script>";
