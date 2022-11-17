@@ -46,6 +46,15 @@
 
         <div class="grid-logo">
             <h1 id="logo">Comments</h1>
+            <br>
+            <p><b>
+                    <?php #모든 페이지 상단에 삽입
+                            session_start(); #php 세션 사용
+                      if (isset($_SESSION['name'])) { #등록된 이름이 있을 경우에만 인사 메세지를 출력함
+                            echo "HI! " . $_SESSION['name'] . "";
+                            }
+                            ?>
+                </b></p>
             <p><br><b>You can check the comments of our users!</b> </P>
         
         </div>
