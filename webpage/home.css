@@ -45,6 +45,14 @@ div {
   text-align: center;
 }
 
+.grid-info {
+    list-style-type: none;
+    background-color: rgb(230, 250, 195);
+    grid-column: 2/ span 3;
+    padding: 1em;
+    padding-top: 1em;
+}
+
 a{
   text-decoration: none;
   text-align: center;
@@ -108,12 +116,7 @@ nav ul li ul li a {
 
 nav .fa.fa-angle-down { margin-left: 6px; }
 
-/*
-body {
-    font-family: Consolas, monospace;
-    font-family: 12px;
-}
-*/
+
 table {
     width: 100%;
 }
@@ -192,4 +195,16 @@ table.frame td {
      padding: 10px;
      vertical-align: top;
      border-bottom: 1px solid #ccc;
+}
+
+  /* for table */
+table {
+    width: 100%;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #dadada; 
+    text-align: center;
 }
